@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "projects": "Projeler",
+    "experience": "Deneyim",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "Merhaba, ben",
+    "ctaProjects": "Projeleri Gör",
+    "ctaContact": "İletişime Geç",
+    "downloadCv": "CV İndir",
+    "scroll": "Kaydır"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "kicker": "Tanışalım"
+  },
+  "skills": {
+    "title": "Yetenekler & Teknolojiler",
+    "kicker": "Ne kullanıyorum"
+  },
+  "projects": {
+    "title": "Projeler",
+    "kicker": "Seçilmiş çalışmalar",
+    "featured": "Öne çıkanlar",
+    "privateNote": "Kaynak kodu özel",
+    "viewLive": "Canlı Demo",
+    "viewCode": "Kaynak Kod",
+    "privateExplain": "Bu projelerin bazılarının kaynak kodu özeldir; aşağıda ne yaptığımı ve hangi teknolojileri kullandığımı görebilirsiniz."
+  },
+  "experience": {
+    "title": "Deneyim & Eğitim",
+    "kicker": "Yolculuğum",
+    "work": "İş Deneyimi",
+    "education": "Eğitim"
+  },
+  "contact": {
+    "title": "Birlikte Çalışalım",
+    "kicker": "İletişim",
+    "text": "Yeni fırsatlara ve iş birliklerine açığım. Bir mesaj bırakın!",
+    "emailMe": "E-posta Gönder"
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "builtWith": "Next.js ile geliştirildi"
+  },
+  "language": {
+    "switch": "Dil",
+    "tr": "Türkçe",
+    "en": "English"
+  }
+}

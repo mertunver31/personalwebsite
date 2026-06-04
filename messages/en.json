@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Get in Touch",
+    "downloadCv": "Download CV",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "About Me",
+    "kicker": "Get to know me"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "kicker": "What I use"
+  },
+  "projects": {
+    "title": "Projects",
+    "kicker": "Selected work",
+    "featured": "Featured",
+    "privateNote": "Source code private",
+    "viewLive": "Live Demo",
+    "viewCode": "Source Code",
+    "privateExplain": "Some of these projects have private source code; below you can see what I built and which technologies I used."
+  },
+  "experience": {
+    "title": "Experience & Education",
+    "kicker": "My journey",
+    "work": "Work Experience",
+    "education": "Education"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "kicker": "Contact",
+    "text": "I'm open to new opportunities and collaborations. Drop me a message!",
+    "emailMe": "Send an Email"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js"
+  },
+  "language": {
+    "switch": "Language",
+    "tr": "Türkçe",
+    "en": "English"
+  }
+}
