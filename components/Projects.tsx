@@ -12,7 +12,7 @@ export function Projects({ locale }: { locale: Locale }) {
   const t = useTranslations("projects");
 
   return (
-    <section id="projects" className="scroll-mt-24 px-5 py-24 sm:px-8">
+    <section id="projects" className="scroll-mt-24 px-5 py-16 sm:py-24 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <SectionHeading kicker={t("kicker")} title={t("title")} />
 
@@ -33,7 +33,7 @@ export function Projects({ locale }: { locale: Locale }) {
                   />
                 )}
 
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex flex-wrap items-start justify-between gap-2">
                   <h3 className="font-display text-xl font-semibold">
                     {p.title}
                   </h3>

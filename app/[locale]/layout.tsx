@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import {
+  Inter,
+  Space_Grotesk,
+  JetBrains_Mono,
+  Rye,
+  Special_Elite,
+} from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -7,7 +13,15 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing } from "@/i18n/routing";
 import { profile } from "@/content/profile";
+import { pick, type Locale } from "@/lib/i18n";
+import { siteUrl } from "@/lib/site";
 import { Background } from "@/components/Background";
+import { NeonGrid } from "@/components/NeonGrid";
+import { Tumbleweed } from "@/components/Tumbleweed";
+import { LightPull } from "@/components/LightPull";
+import { MusicBox } from "@/components/MusicBox";
+import { ContactOrb } from "@/components/ContactOrb";
+import { CustomScrollbar } from "@/components/CustomScrollbar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import "../globals.css";
@@ -18,15 +32,51 @@ const display = Space_Grotesk({
   variable: "--font-display",
 });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const western = Rye({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-western",
+});
+const typewriter = Special_Elite({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-typewriter",
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  title: `${profile.name} — Portfolio`,
-  description: profile.tagline.en,
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const l = (
+    hasLocale(routing.locales, locale) ? locale : routing.defaultLocale
+  ) as Locale;
+  const title = `${profile.name} — ${pick(profile.role, l)}`;
+  const description = pick(profile.tagline, l);
+  return {
+    metadataBase: new URL(siteUrl),
+    title,
+    description,
+    alternates: {
+      canonical: `/${l}`,
+      languages: { tr: "/tr", en: "/en" },
+    },
+    openGraph: {
+      title,
+      description,
+      siteName: profile.name,
+      type: "website",
+      url: `/${l}`,
+      locale: l === "tr" ? "tr_TR" : "en_US",
+    },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -44,11 +94,17 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${display.variable} ${mono.variable} h-full`}
+      className={`${inter.variable} ${display.variable} ${mono.variable} ${western.variable} ${typewriter.variable} h-full`}
     >
       <body className="relative min-h-full">
         <NextIntlClientProvider>
+          <LightPull />
+          <MusicBox />
+          <ContactOrb />
+          <CustomScrollbar />
           <Background />
+          <NeonGrid />
+          <Tumbleweed />
           <Navbar />
           <main className="relative z-10">{children}</main>
           <Footer />

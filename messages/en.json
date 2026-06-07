@@ -19,7 +19,29 @@
   },
   "skills": {
     "title": "Skills & Technologies",
-    "kicker": "What I use"
+    "kicker": "What I use",
+    "lightOff": "Turn Off the Light",
+    "lightOn": "Turn On the Light",
+    "shoot": "Shoot the Skills",
+    "shootBanner": "SHOOT THE SKILLS!",
+    "reload": "Reload",
+    "exit": "Exit",
+    "win": "YOU GOT 'EM ALL, PARTNER!",
+    "race": "Enter the Grid",
+    "round": "ROUND 1",
+    "lose": "THE GRID ALWAYS WINS",
+    "loseSub": "YOU LOSE",
+    "rematch": "Rematch",
+    "controlsHint": "← → turn · space jump",
+    "mobileHint": "Turn: left/right · Jump: button below",
+    "skip": "Skip",
+    "youWin": "YOU WIN!",
+    "rigged": "THIS IS MY WORLD",
+    "riggedSub": "I ALWAYS WIN",
+    "jump": "Jump",
+    "collected": "Collected",
+    "realWin": "GRID MASTER",
+    "realWinSub": "YOU TRULY WON"
   },
   "projects": {
     "title": "Projects",
@@ -50,5 +72,33 @@
     "switch": "Language",
     "tr": "Türkçe",
     "en": "English"
+  },
+  "lightPull": {
+    "hint": "Pull the cord to turn on the lights",
+    "aria": "Pull the cord to turn on the lights",
+    "turnOff": "Turn off the light",
+    "turnOn": "Turn on the light",
+    "pull": "Pull Me"
+  },
+  "music": {
+    "play": "Play music",
+    "pause": "Pause music",
+    "nowPlaying": "Now Playing"
+  },
+  "contactOrb": {
+    "open": "Leave me a message",
+    "title": "Get in Touch",
+    "subtitle": "Drop your LinkedIn, phone or email and I'll get back to you.",
+    "contactLabel": "LinkedIn / Phone / Email",
+    "contactPlaceholder": "linkedin.com/in/… · +90… · you@mail.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write a few lines…",
+    "burst": "I'll get back to you as soon as possible",
+    "send": "Send",
+    "sending": "Sending…",
+    "sentTitle": "Message received!",
+    "sentBody": "Thanks — I'll get back to you soon.",
+    "error": "Couldn't send. You can email me directly:",
+    "close": "Close"
   }
 }

@@ -19,7 +19,29 @@
   },
   "skills": {
     "title": "Yetenekler & Teknolojiler",
-    "kicker": "Ne kullanıyorum"
+    "kicker": "Ne kullanıyorum",
+    "lightOff": "Işığı Kapat",
+    "lightOn": "Işığı Aç",
+    "shoot": "Skill'leri Vur",
+    "shootBanner": "SKILL'LERİ VUR!",
+    "reload": "Şarjör Doldur",
+    "exit": "Çıkış",
+    "win": "HEPSİNİ VURDUN, ORTAK!",
+    "race": "Izgaraya Gir",
+    "round": "1. RAUNT",
+    "lose": "IZGARA HEP KAZANIR",
+    "loseSub": "KAYBETTİN",
+    "rematch": "Rövanş",
+    "controlsHint": "← → dön · boşluk zıpla",
+    "mobileHint": "Dön: sol/sağ · Zıpla: alttaki tuş",
+    "skip": "Geç",
+    "youWin": "KAZANDIN!",
+    "rigged": "BURASI BENİM DÜNYAM",
+    "riggedSub": "HER ZAMAN BEN KAZANIRIM",
+    "jump": "Zıpla",
+    "collected": "Toplanan",
+    "realWin": "IZGARANIN HAKİMİ",
+    "realWinSub": "GERÇEKTEN KAZANDIN"
   },
   "projects": {
     "title": "Projeler",
@@ -50,5 +72,33 @@
     "switch": "Dil",
     "tr": "Türkçe",
     "en": "English"
+  },
+  "lightPull": {
+    "hint": "Işığı yakmak için ipi çek",
+    "aria": "Işıkları yakmak için ipi çekin",
+    "turnOff": "Işığı Kapat",
+    "turnOn": "Işığı Aç",
+    "pull": "İpi Çek"
+  },
+  "music": {
+    "play": "Müziği çal",
+    "pause": "Müziği durdur",
+    "nowPlaying": "Şimdi Çalıyor"
+  },
+  "contactOrb": {
+    "open": "Bana mesaj bırak",
+    "title": "Bana Ulaş",
+    "subtitle": "LinkedIn, telefon ya da e-posta bırak; sana döneyim.",
+    "contactLabel": "LinkedIn / Telefon / E-posta",
+    "contactPlaceholder": "linkedin.com/in/… · +90… · ad@mail.com",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Birkaç satır yaz…",
+    "burst": "Size en kısa sürede cevap vereceğim",
+    "send": "Gönder",
+    "sending": "Gönderiliyor…",
+    "sentTitle": "Mesajın ulaştı!",
+    "sentBody": "Teşekkürler, en kısa sürede dönüş yapacağım.",
+    "error": "Gönderilemedi. Dilersen doğrudan e-posta atabilirsin:",
+    "close": "Kapat"
   }
 }

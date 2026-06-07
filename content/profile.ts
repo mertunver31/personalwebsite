@@ -13,16 +13,16 @@ import type {
 export const profile = {
   name: "Mert Efe Ünver",
   role: {
-    tr: "Fullstack AI Geliştirici",
-    en: "Fullstack AI Developer",
+    tr: "Fullstack Yazılım Mühendisi",
+    en: "Fullstack Software Engineer",
   } satisfies Localized,
   tagline: {
-    tr: "Üretim seviyesinde AI/LLM sistemlerini uçtan uca tasarlar, fine-tune eder ve yayına alırım.",
-    en: "I build, fine-tune, and ship production-grade AI/LLM systems end to end.",
+    tr: "AI/LLM sistemlerinden full-stack web & mobil uygulamalara kadar uçtan uca ürünler tasarlar ve geliştiririm — güçlü bir tasarım anlayışıyla.",
+    en: "From AI/LLM systems to full-stack web & mobile apps, I design and ship end-to-end products — with a strong eye for design.",
   } satisfies Localized,
   about: {
-    tr: "Yapay zeka/LLM sistemlerini uçtan uca geliştiren, fine-tune eden ve yayına alan bir Fullstack AI geliştiricisiyim. Bağımsız olarak full-stack platformlar (React/Next.js + FastAPI) tasarlıyor, makine öğrenmesi modellerini entegre edip uyarlıyor ve bunları besleyen veri pipeline'larını kuruyorum. Modelin tüm yaşam döngüsünde rahatım: veri seti oluşturma, prompt mühendisliği, fine-tuning ve çıktı değerlendirme. Üniversiteler arası mühendislik yarışmalarında iki kez birincilik ve Teknofest finalistliği elde ettim.",
-    en: "I'm a Fullstack AI Developer with hands-on experience building, fine-tuning, and shipping production-grade AI/LLM systems end to end. I independently design full-stack platforms (React/Next.js + FastAPI), integrate and adapt machine-learning models, and build the data pipelines that feed them — across the full model lifecycle: dataset construction, prompt engineering, fine-tuning, and output evaluation. Dual 1st-place winner in inter-university engineering competitions and a Teknofest finalist.",
+    tr: "Geniş bir yelpazede çalışan bir Fullstack yazılım mühendisiyim: AI/LLM sistemleri, full-stack web ve mobil uygulamalar, veri pipeline'ları ve ürün tasarımı. React/Next.js + FastAPI ile uçtan uca platformlar kuruyor, makine öğrenmesi modellerini entegre edip uyarlıyorum. Tasarım yönüm de güçlü — bu sitenin kendisi de küçük bir tasarım denemesi. Modelin tüm yaşam döngüsünde rahatım: veri seti oluşturma, prompt mühendisliği, fine-tuning ve çıktı değerlendirme. Grup arkadaşlarımla beraber üniversiteler arası mühendislik yarışmalarında iki kez birincilik ve Teknofest finalistliği elde ettik.",
+    en: "I'm a Fullstack software engineer working across a broad range: AI/LLM systems, full-stack web and mobile apps, data pipelines, and product design. I build end-to-end platforms with React/Next.js + FastAPI and integrate and adapt machine-learning models. I also have a strong design sense — this very website is a little design experiment. I'm comfortable across the full model lifecycle: dataset construction, prompt engineering, fine-tuning, and output evaluation. Together with my teammates, we won 1st place twice in inter-university engineering competitions and reached the Teknofest finals.",
   } satisfies Localized,
   location: {
     tr: "Ankara, Türkiye",
@@ -103,19 +103,30 @@ export const skillGroups: SkillGroup[] = [
       { name: "Playwright" },
     ],
   },
+  {
+    title: { tr: "AI Araçları", en: "AI Tools" },
+    skills: [
+      { name: "Claude Code" },
+      { name: "Gemini Antigravity" },
+      { name: "Codex" },
+      { name: "Gemini CLI" },
+      { name: "Ollama" },
+      { name: "Alibaba Cloud" },
+    ],
+  },
 ];
 
 export const experience: ExperienceItem[] = [
   {
     role: {
-      tr: "Yazılım & AI Geliştirme Stajyeri",
-      en: "Software & AI Development Intern",
+      tr: "İş Geliştirme Stajyeri",
+      en: "Business Development Intern",
     },
     company: "Pavo Group — Ankara",
     period: { tr: "May 2024 — Haz 2025", en: "May 2024 — Jun 2025" },
     description: {
-      tr: "Takip süreçlerini otomatikleştirmek ve ekip iş akışlarını optimize etmek için dil modeli özellikleri gömülü, AI/LLM entegre bir görev yönetimi aracını bağımsız olarak geliştirdim. Yöneticilerin karar almasına yönelik DAX ile kapsamlı Power BI raporları ve panoları tasarladım.",
-      en: "Independently engineered an AI/LLM-integrated task-management tool, embedding language-model features to automate tracking and optimize team workflows. Designed comprehensive Power BI reports and dashboards using DAX for executive decision-making.",
+      tr: "Takip süreçlerini otomatikleştirmek ve ekip iş akışlarını optimize etmek için dil modeli özellikleri gömülü, AI/LLM entegre bir görev yönetimi aracını bağımsız olarak geliştirmeye çalıştım. Yöneticilerin karar almasına yönelik DAX ile kapsamlı Power BI raporları ve panoları tasarladım.",
+      en: "Worked on building an AI/LLM-integrated task-management tool, embedding language-model features to automate tracking and optimize team workflows. Designed comprehensive Power BI reports and dashboards using DAX for executive decision-making.",
     },
     tech: ["Python", "LLM", "Power BI", "DAX"],
   },
