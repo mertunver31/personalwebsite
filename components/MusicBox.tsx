@@ -81,8 +81,12 @@ export function MusicBox() {
 
   // Tarayıcı autoplay'i engellerse: ilk kullanıcı etkileşiminde başlat
   useEffect(() => {
-    const tryStart = () => {
+    const tryStart = (e: Event) => {
       if (!musicOnRef.current) return;
+      const targetEl = e.target as HTMLElement;
+      if (targetEl && targetEl.closest("[data-music-box]")) {
+        return;
+      }
       const target = onRef.current ? jazzRef.current : edmRef.current;
       target
         ?.play()
@@ -120,7 +124,7 @@ export function MusicBox() {
   return (
     <>
       {/* Masaüstü: köşe müzik kutusu (sm ve üzeri) */}
-      <div className="fixed bottom-6 left-6 z-[97] hidden sm:block">
+      <div className="fixed bottom-6 left-6 z-[97] hidden sm:block" data-music-box>
         <AnimatePresence mode="wait">
         {on ? (
           // ============ JUKEBOX (ışıklar açık) ============
@@ -355,7 +359,7 @@ export function MusicBox() {
       </div>
 
       {/* Mobil: sayfanın altında şeffaf Spotify-vari müzik barı (sm altı) */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[97] flex h-14 items-end justify-center sm:hidden">
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[97] flex h-14 items-end justify-center sm:hidden" data-music-box>
         {/* Ekolayzer barları — tüm genişlik, şeffaf */}
         <div className="flex h-9 w-full items-end justify-between gap-[1px] px-3 pb-1">
           {Array.from({ length: 26 }).map((_, i) => (
