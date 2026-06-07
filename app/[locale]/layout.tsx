@@ -16,12 +16,7 @@ import { profile } from "@/content/profile";
 import { pick, type Locale } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
 import { Background } from "@/components/Background";
-import { NeonGrid } from "@/components/NeonGrid";
-import { Tumbleweed } from "@/components/Tumbleweed";
-import { LightPull } from "@/components/LightPull";
-import { MusicBox } from "@/components/MusicBox";
-import { ContactOrb } from "@/components/ContactOrb";
-import { CustomScrollbar } from "@/components/CustomScrollbar";
+import { ClientWidgets } from "@/components/ClientWidgets";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import "../globals.css";
@@ -98,13 +93,8 @@ export default async function LocaleLayout({
     >
       <body className="relative min-h-full">
         <NextIntlClientProvider>
-          <LightPull />
-          <MusicBox />
-          <ContactOrb />
-          <CustomScrollbar />
           <Background />
-          <NeonGrid />
-          <Tumbleweed />
+          <ClientWidgets />
           <Navbar />
           <main className="relative z-10">{children}</main>
           <Footer />
