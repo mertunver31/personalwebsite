@@ -289,8 +289,8 @@ export function Hero({ locale }: { locale: Locale }) {
               {t("ctaContact")}
             </a>
             <a
-              href={profile.cvUrl}
-              download
+              href={locale === "tr" ? "/cv-tr.pdf" : "/cv-en.pdf"}
+              download={`Mert-Efe-Unver-CV-${locale.toUpperCase()}.pdf`}
               className="inline-flex items-center gap-2 rounded-full px-5 py-3 font-medium text-muted transition-colors hover:text-foreground"
             >
               <Download size={18} />
