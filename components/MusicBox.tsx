@@ -79,32 +79,29 @@ export function MusicBox() {
     return () => clearTimeout(id);
   }, [musicOn, on]);
 
-  // Tarayıcı autoplay'i engellerse: ilk kullanıcı etkileşiminde başlat
+  // Tarayıcı autoplay'i engellerse: SAYFADAKİ İLK etkileşimde (her yerde) başlat.
+  // (Tarayıcılar etkileşim öncesi sesli oynatmaya izin vermez; bu en erken andır.)
   useEffect(() => {
+    const events = ["pointerdown", "touchstart", "mousedown", "keydown", "click"];
+    const opts: AddEventListenerOptions = { capture: true };
+    const remove = () =>
+      events.forEach((e) => window.removeEventListener(e, tryStart, opts));
     const tryStart = (e: Event) => {
-      if (!musicOnRef.current) return;
-      const targetEl = e.target as HTMLElement;
-      if (targetEl && targetEl.closest("[data-music-box]")) {
+      if (!musicOnRef.current) {
+        remove();
         return;
       }
+      // Müzik kutusuna tıklamayı butona bırak (toggle); diğer her etkileşim başlatır
+      const el = e.target as HTMLElement | null;
+      if (el && el.closest("[data-music-box]")) return;
       const target = onRef.current ? jazzRef.current : edmRef.current;
       target
         ?.play()
-        .then(() => {
-          window.removeEventListener("pointerdown", tryStart);
-          window.removeEventListener("keydown", tryStart);
-          window.removeEventListener("touchstart", tryStart);
-        })
+        .then(remove)
         .catch(() => {});
     };
-    window.addEventListener("pointerdown", tryStart);
-    window.addEventListener("keydown", tryStart);
-    window.addEventListener("touchstart", tryStart);
-    return () => {
-      window.removeEventListener("pointerdown", tryStart);
-      window.removeEventListener("keydown", tryStart);
-      window.removeEventListener("touchstart", tryStart);
-    };
+    events.forEach((e) => window.addEventListener(e, tryStart, opts));
+    return remove;
   }, []);
 
   const toggle = () => {
