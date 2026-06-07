@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { VisitTracker } from "./VisitTracker";
 
 // Kritik olmayan (ekranın görünür içeriği olmayan) widget'lar ilk hidrasyondan
 // çıkarılır; ayrı chunk olarak yüklenir. Mobil TBT'yi düşürür, skoru stabilize eder.
@@ -35,6 +36,7 @@ export function ClientWidgets() {
       <CustomScrollbar />
       <NeonGrid />
       <Tumbleweed />
+      <VisitTracker />
     </>
   );
 }
