@@ -23,6 +23,8 @@ export function MusicBox() {
   const edmRef = useRef<HTMLAudioElement>(null);
   // Tek kaynak: müzik çalsın mı? Varsayılan AÇIK. Mod geçişlerinde korunur.
   const [musicOn, setMusicOn] = useState(true);
+  // Gerçekten çalıyor mu (animasyonları yalnız o zaman oynat — perf)
+  const [isPlaying, setIsPlaying] = useState(false);
   const onRef = useRef(on);
   const musicOnRef = useRef(musicOn);
   useEffect(() => {
@@ -35,6 +37,26 @@ export function MusicBox() {
   // Tercihi geri yükle (kayıt yoksa varsayılan açık)
   useEffect(() => {
     if (sessionStorage.getItem("music") === "off") setMusicOn(false);
+  }, []);
+
+  // Gerçek çalma durumunu izle (animasyonları yalnız çalarken oynatmak için)
+  useEffect(() => {
+    const j = jazzRef.current;
+    const e = edmRef.current;
+    const upd = () =>
+      setIsPlaying(!!((j && !j.paused) || (e && !e.paused)));
+    const els = [j, e];
+    els.forEach((a) => {
+      a?.addEventListener("play", upd);
+      a?.addEventListener("pause", upd);
+      a?.addEventListener("ended", upd);
+    });
+    return () =>
+      els.forEach((a) => {
+        a?.removeEventListener("play", upd);
+        a?.removeEventListener("pause", upd);
+        a?.removeEventListener("ended", upd);
+      });
   }, []);
 
   // Çalmayı (musicOn, on) durumuna senkronla: western=caz, neon=EDM
@@ -108,7 +130,7 @@ export function MusicBox() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.4 }}
-            className={`juke ${musicOn ? "playing" : ""} relative w-[150px] select-none sm:w-[168px]`}
+            className={`juke ${isPlaying ? "playing" : ""} relative w-[150px] select-none sm:w-[168px]`}
             style={{
               background:
                 "linear-gradient(180deg,#6b4226 0%,#5a3620 18%,#4a2c1a 60%,#3a2113 100%)",
@@ -234,7 +256,7 @@ export function MusicBox() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.4 }}
-            className={`rave ${musicOn ? "playing" : ""} relative w-[176px] select-none rounded-2xl border p-3`}
+            className={`rave ${isPlaying ? "playing" : ""} relative w-[176px] select-none rounded-2xl border p-3`}
             style={{
               background:
                 "linear-gradient(160deg,#0a0a16 0%,#060610 60%,#03030a 100%)",
@@ -352,7 +374,7 @@ export function MusicBox() {
                   : "0 0 6px rgba(34,211,238,0.7)",
                 animation: "rave-eq 0.75s ease-in-out infinite",
                 animationDelay: `${(i % 7) * 0.08}s`,
-                animationPlayState: musicOn ? "running" : "paused",
+                animationPlayState: isPlaying ? "running" : "paused",
               }}
             />
           ))}
@@ -398,8 +420,8 @@ export function MusicBox() {
       </div>
 
       {/* İki ses kaynağı her zaman DOM'da kalır (pozisyon korunur) */}
-      <audio ref={jazzRef} src="/music/saloon.mp3" loop preload="auto" />
-      <audio ref={edmRef} src="/music/neon.mp3" loop preload="auto" />
+      <audio ref={jazzRef} src="/music/saloon.mp3" loop preload="none" />
+      <audio ref={edmRef} src="/music/neon.mp3" loop preload="none" />
     </>
   );
 }

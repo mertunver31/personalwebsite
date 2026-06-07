@@ -81,7 +81,7 @@ export function Tumbleweed() {
       const list: Weed[] = [];
       let id = 0;
       // Her satırda (yatay) — rastgele yön/hız/gecikme
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 5; i++) {
         list.push({
           id: id++,
           axis: "x",
@@ -93,7 +93,7 @@ export function Tumbleweed() {
         });
       }
       // Her sütunda (dikey) — rastgele yön/hız/gecikme
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 5; i++) {
         list.push({
           id: id++,
           axis: "y",
@@ -132,8 +132,7 @@ export function Tumbleweed() {
               {
                 ...(w.axis === "y" ? { left: w.pos } : { top: w.pos }),
                 animation: `${name} ${w.dur}s linear ${w.delay}s infinite backwards`,
-                filter: "drop-shadow(0 0 6px rgba(205,164,92,0.35))",
-                opacity: 0.7,
+                opacity: 0.6,
               } as React.CSSProperties
             }
           >

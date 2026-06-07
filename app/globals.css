@@ -524,9 +524,21 @@ body.neon-mode::after {
   to { filter: hue-rotate(360deg); }
 }
 .orb-rot {
-  animation:
-    orb-spin 7s linear infinite,
-    orb-hue 5s linear infinite;
+  animation: orb-spin 8s linear infinite;
+}
+
+/* Mobilde performans: ağır ambient animasyonları durdur (kasmayı önler) */
+@media (max-width: 640px) {
+  .animate-float-slow {
+    animation: none !important;
+  }
+  .tumbleweed-el {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+  .orb-rot {
+    animation: none !important;
+  }
 }
 
 /* Native scrollbar gizli — yerine özel CustomScrollbar kullanılıyor */

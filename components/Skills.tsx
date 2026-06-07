@@ -12,7 +12,13 @@ import { Reveal } from "./Reveal";
 import { TechIcon, techColor } from "./TechIcon";
 import { setSkillsInView, useLights } from "./lightStore";
 import { playGunshot, playReload } from "./gunSound";
-import { GridRace, type Rect } from "./GridRace";
+import dynamic from "next/dynamic";
+import type { Rect } from "./GridRace";
+
+// Tron oyunu yalnız "ENTER THE GRID"e basınca yüklenir (başlangıç paketini küçültür)
+const GridRace = dynamic(() => import("./GridRace").then((m) => m.GridRace), {
+  ssr: false,
+});
 
 const MAX_AMMO = 6;
 
