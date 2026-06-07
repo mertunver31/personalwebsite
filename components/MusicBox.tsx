@@ -226,8 +226,8 @@ export function MusicBox() {
               <button
                 type="button"
                 onClick={toggle}
-                aria-pressed={musicOn}
-                aria-label={musicOn ? t("pause") : t("play")}
+                aria-pressed={isPlaying}
+                aria-label={isPlaying ? t("pause") : t("play")}
                 className="grid h-11 w-11 place-items-center rounded-full transition-transform active:scale-95"
                 style={{
                   background:
@@ -237,7 +237,7 @@ export function MusicBox() {
                   border: "1px solid #5a3f15",
                 }}
               >
-                {musicOn ? (
+                {isPlaying ? (
                   <Pause size={18} className="text-[#3a2710]" fill="#3a2710" />
                 ) : (
                   <Play
@@ -328,8 +328,8 @@ export function MusicBox() {
               <button
                 type="button"
                 onClick={toggle}
-                aria-pressed={musicOn}
-                aria-label={musicOn ? t("pause") : t("play")}
+                aria-pressed={isPlaying}
+                aria-label={isPlaying ? t("pause") : t("play")}
                 className="grid h-11 w-11 place-items-center rounded-full border transition-transform active:scale-95"
                 style={{
                   background:
@@ -339,7 +339,7 @@ export function MusicBox() {
                     "0 0 14px rgba(34,211,238,0.7), inset 0 0 12px rgba(236,72,153,0.4)",
                 }}
               >
-                {musicOn ? (
+                {isPlaying ? (
                   <Pause size={18} className="text-[#eafdff]" fill="#22d3ee" />
                 ) : (
                   <Play
@@ -385,7 +385,7 @@ export function MusicBox() {
         <button
           type="button"
           onClick={toggle}
-          aria-label={musicOn ? t("pause") : t("play")}
+          aria-label={isPlaying ? t("pause") : t("play")}
           className="pointer-events-auto absolute bottom-2.5 left-1/2 grid h-12 w-12 -translate-x-1/2 place-items-center rounded-full border backdrop-blur-sm transition-transform active:scale-95"
           style={
             on
@@ -404,7 +404,7 @@ export function MusicBox() {
                 }
           }
         >
-          {musicOn ? (
+          {isPlaying ? (
             <Pause
               size={18}
               className={on ? "text-[#3a2710]" : "text-[#eafdff]"}
