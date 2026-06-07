@@ -11,9 +11,20 @@ import { useLights } from "./lightStore";
 export function CustomScrollbar() {
   const { on } = useLights();
   const [m, setM] = useState({ h: 0, top: 0, show: false });
+  const [desktop, setDesktop] = useState(false);
   const dragRef = useRef<{ startY: number; startScroll: number } | null>(null);
 
+  // Yalnız masaüstünde aktif (mobilde native dokunma kaydırması; gereksiz dinleyici yok)
   useEffect(() => {
+    const mq = window.matchMedia("(min-width: 640px)");
+    const upd = () => setDesktop(mq.matches);
+    upd();
+    mq.addEventListener("change", upd);
+    return () => mq.removeEventListener("change", upd);
+  }, []);
+
+  useEffect(() => {
+    if (!desktop) return;
     const update = () => {
       const sh = document.documentElement.scrollHeight;
       const ch = window.innerHeight;
@@ -35,9 +46,10 @@ export function CustomScrollbar() {
       window.removeEventListener("resize", update);
       ro.disconnect();
     };
-  }, []);
+  }, [desktop]);
 
   useEffect(() => {
+    if (!desktop) return;
     const onMove = (e: PointerEvent) => {
       const d = dragRef.current;
       if (!d) return;
@@ -57,9 +69,9 @@ export function CustomScrollbar() {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerup", onUp);
     };
-  }, []);
+  }, [desktop]);
 
-  if (!m.show) return null;
+  if (!desktop || !m.show) return null;
 
   return (
     <div className="pointer-events-none fixed right-0 top-0 z-[60] hidden h-screen w-2.5 sm:block">

@@ -230,8 +230,8 @@ export function Hero({ locale }: { locale: Locale }) {
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 24 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
             className="mt-4 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl"
           >
@@ -321,9 +321,9 @@ export function Hero({ locale }: { locale: Locale }) {
 
         {/* Fotoğraf sütunu */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          initial={{ scale: 0.97 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="relative order-1 mx-auto w-full max-w-[240px] sm:max-w-[280px] lg:order-2 lg:max-w-sm"
         >
           <div className="bg-gradient-accent absolute -inset-3 rounded-[2rem] opacity-40 blur-2xl" />
@@ -334,6 +334,7 @@ export function Hero({ locale }: { locale: Locale }) {
               width={520}
               height={620}
               priority
+              sizes="(max-width: 1024px) 280px, 384px"
               className="aspect-[5/6] w-full rounded-[1.4rem] object-cover"
             />
             <AnimatePresence>
