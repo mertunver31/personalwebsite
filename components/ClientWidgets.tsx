@@ -43,9 +43,9 @@ export function ClientWidgets() {
     <>
       <LightPull />
       <MusicBox />
+      <ContactOrb />
       {!isMobile && (
         <>
-          <ContactOrb />
           <CustomScrollbar />
           <Tumbleweed />
         </>

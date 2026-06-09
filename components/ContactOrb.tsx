@@ -41,7 +41,11 @@ export function ContactOrb() {
       });
     }
     setStatus("idle");
-    setPhase("fly");
+    if (isMobile) {
+      setPhase("card");
+    } else {
+      setPhase("fly");
+    }
     setOpen(true);
   };
 
@@ -73,8 +77,9 @@ export function ContactOrb() {
   }, [open]);
 
   const particles = useMemo(
-    () =>
-      Array.from({ length: 40 }).map((_, i) => {
+    () => {
+      if (isMobile) return [];
+      return Array.from({ length: 40 }).map((_, i) => {
         const a = Math.random() * Math.PI * 2;
         const d = 90 + Math.random() * 340;
         return {
@@ -86,8 +91,9 @@ export function ContactOrb() {
           dur: 0.9 + Math.random() * 1.0,
           fall: 50 + Math.random() * 180, // yerçekimi
         };
-      }),
-    [palette],
+      });
+    },
+    [palette, isMobile],
   );
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -132,26 +138,33 @@ export function ContactOrb() {
         type="button"
         onClick={openOverlay}
         aria-label={t("open")}
-        className="fixed bottom-3 right-3 z-[97] grid h-12 w-12 place-items-center rounded-full transition-transform hover:scale-110 active:scale-95 sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
+        className={`fixed bottom-3 right-3 z-[97] grid h-12 w-12 place-items-center rounded-full transition-transform active:scale-95 sm:bottom-6 sm:right-6 sm:h-14 sm:w-14 ${!isMobile ? "hover:scale-110" : ""}`}
         style={{
           opacity: open ? 0 : 1,
           pointerEvents: open ? "none" : "auto",
-          boxShadow: `0 6px 20px -4px rgba(0,0,0,0.6), 0 0 22px ${ring}77`,
+          background: isMobile ? ring : conic,
+          boxShadow: isMobile
+            ? `0 4px 12px rgba(0,0,0,0.4)`
+            : `0 6px 20px -4px rgba(0,0,0,0.6), 0 0 22px ${ring}77`,
         }}
       >
         {/* Dönen + renk karıştıran konik katman */}
-        <span
-          className="orb-rot absolute inset-0 rounded-full"
-          style={{ background: conic }}
-        />
+        {!isMobile && (
+          <span
+            className="orb-rot absolute inset-0 rounded-full"
+            style={{ background: conic }}
+          />
+        )}
         {/* 3D parlama */}
-        <span
-          className="absolute inset-0 rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle at 32% 28%, rgba(255,255,255,0.7), rgba(255,255,255,0) 45%)",
-          }}
-        />
+        {!isMobile && (
+          <span
+            className="absolute inset-0 rounded-full"
+            style={{
+              background:
+                "radial-gradient(circle at 32% 28%, rgba(255,255,255,0.7), rgba(255,255,255,0) 45%)",
+            }}
+          />
+        )}
         <MessageCircle
           size={20}
           className="relative text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"
