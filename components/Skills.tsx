@@ -313,7 +313,7 @@ export function Skills({ locale }: { locale: Locale }) {
           {marquee.map((name, i) => (
             <span
               key={i}
-              className="font-display text-2xl font-bold text-foreground/10 sm:text-4xl"
+              className="font-display text-2xl font-bold text-foreground/25 sm:text-4xl"
             >
               {name}
             </span>

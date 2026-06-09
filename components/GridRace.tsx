@@ -97,6 +97,13 @@ export function GridRace({
     typeof window !== "undefined" &&
     window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
+  // Mobilde oyun döngüsünü hafiflet: ~30fps hedef + daha kısa iz geçmişi
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(max-width: 640px)").matches;
+  const trailCap = isMobile ? 600 : TRAIL_CAP;
+  const frameMin = isMobile ? 1000 / 32 : 0; // ms — mobilde frame atlama eşiği
+
   const total = skills.length;
 
   const arena = useMemo(() => {
@@ -277,7 +284,7 @@ export function GridRace({
       b.x += Math.cos(b.dir) * b.speed * dt;
       b.y += Math.sin(b.dir) * b.speed * dt;
       b.trail.push({ x: b.x, y: b.y, gap: b.air > 0 });
-      if (b.trail.length > TRAIL_CAP) b.trail.shift();
+      if (b.trail.length > trailCap) b.trail.shift();
     };
 
     const collide = (b: Bike, self: Bike, other: Bike) => {
@@ -299,6 +306,11 @@ export function GridRace({
     let last = 0;
 
     const loop = (now: number) => {
+      // Mobilde ~30fps: frame bütçesi dolmadıysa çizim/simülasyonu atla
+      if (frameMin && last && now - last < frameMin) {
+        raf = requestAnimationFrame(loop);
+        return;
+      }
       if (!last) last = now;
       const dt = Math.min(0.04, (now - last) / 1000);
       last = now;

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Send, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useLights } from "./lightStore";
+import { useIsMobile } from "./useIsMobile";
 import { profile } from "@/content/profile";
 
 type Phase = "fly" | "explode" | "card" | "sent";
@@ -17,6 +18,7 @@ const PALETTE = {
 
 export function ContactOrb() {
   const { on } = useLights();
+  const isMobile = useIsMobile();
   const t = useTranslations("contactOrb");
   const orbRef = useRef<HTMLButtonElement>(null);
 
@@ -72,7 +74,7 @@ export function ContactOrb() {
 
   const particles = useMemo(
     () =>
-      Array.from({ length: 70 }).map((_, i) => {
+      Array.from({ length: 40 }).map((_, i) => {
         const a = Math.random() * Math.PI * 2;
         const d = 90 + Math.random() * 340;
         return {
@@ -229,7 +231,7 @@ export function ContactOrb() {
                             width: p.s,
                             height: p.s,
                             background: p.c,
-                            boxShadow: `0 0 12px ${p.c}, 0 0 24px ${p.c}`,
+                            boxShadow: `0 0 8px ${p.c}`,
                           }}
                           initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
                           animate={{

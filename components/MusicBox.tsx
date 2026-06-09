@@ -356,12 +356,12 @@ export function MusicBox() {
       </div>
 
       {/* Mobil: sayfanın altında şeffaf Spotify-vari müzik barı (sm altı) */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[97] flex h-14 items-end justify-center sm:hidden" data-music-box>
-        {/* Ekolayzer barları — tüm genişlik, şeffaf */}
-        <div className="flex h-9 w-full items-end justify-between gap-[1px] px-3 pb-1">
-          {Array.from({ length: 26 }).map((_, i) => (
+      <div className="pointer-events-none fixed inset-x-0 bottom-3 z-[97] flex items-center justify-center gap-4 sm:hidden" data-music-box>
+        {/* Sol taraftaki 5 ekolayzer barı */}
+        <div className="flex h-8 items-end gap-[4px]">
+          {Array.from({ length: 5 }).map((_, i) => (
             <span
-              key={i}
+              key={`left-${i}`}
               className="origin-bottom rounded-sm"
               style={{
                 width: 3,
@@ -370,23 +370,20 @@ export function MusicBox() {
                   ? "linear-gradient(180deg,#f6d68a,#e0a23a 55%,#c2532a)"
                   : "linear-gradient(180deg,#22d3ee,#8b5cf6 55%,#ec4899)",
                 opacity: 0.8,
-                boxShadow: on
-                  ? "0 0 5px rgba(224,162,58,0.6)"
-                  : "0 0 6px rgba(34,211,238,0.7)",
                 animation: "rave-eq 0.75s ease-in-out infinite",
-                animationDelay: `${(i % 7) * 0.08}s`,
+                animationDelay: `${i * 0.15}s`,
                 animationPlayState: isPlaying ? "running" : "paused",
               }}
             />
           ))}
         </div>
 
-        {/* Ortada aç/kapa butonu */}
+        {/* Ortadaki aç/kapa butonu */}
         <button
           type="button"
           onClick={toggle}
           aria-label={isPlaying ? t("pause") : t("play")}
-          className="pointer-events-auto absolute bottom-2.5 left-1/2 grid h-12 w-12 -translate-x-1/2 place-items-center rounded-full border backdrop-blur-sm transition-transform active:scale-95"
+          className="pointer-events-auto relative grid h-12 w-12 place-items-center rounded-full border backdrop-blur-sm transition-transform active:scale-95"
           style={
             on
               ? {
@@ -418,6 +415,27 @@ export function MusicBox() {
             />
           )}
         </button>
+
+        {/* Sağ taraftaki 5 ekolayzer barı */}
+        <div className="flex h-8 items-end gap-[4px]">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <span
+              key={`right-${i}`}
+              className="origin-bottom rounded-sm"
+              style={{
+                width: 3,
+                height: "100%",
+                background: on
+                  ? "linear-gradient(180deg,#f6d68a,#e0a23a 55%,#c2532a)"
+                  : "linear-gradient(180deg,#22d3ee,#8b5cf6 55%,#ec4899)",
+                opacity: 0.8,
+                animation: "rave-eq 0.75s ease-in-out infinite",
+                animationDelay: `${(4 - i) * 0.15}s`,
+                animationPlayState: isPlaying ? "running" : "paused",
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* İki ses kaynağı her zaman DOM'da kalır (pozisyon korunur) */}

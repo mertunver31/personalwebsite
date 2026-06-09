@@ -129,7 +129,7 @@ body:not(.neon-mode)::after {
     rgba(255, 255, 255, 0.04),
     rgba(255, 255, 255, 0.01)
   );
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(var(--glass-blur, 12px));
   border: 1px solid var(--border);
 }
 
@@ -538,6 +538,20 @@ body.neon-mode::after {
   }
   .orb-rot {
     animation: none !important;
+  }
+  /* Mobilde akan neon ışıklar render edilmese de güvenlik için durdur */
+  .neon-beam {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+  /* Skills neon öğelerinin sürekli shadow animasyonu mobilde kapalı (statik kalır) */
+  .neon-item {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  /* Cam efekti blur'unu hafiflet — scroll sırasında repaint maliyetini düşürür */
+  .glass {
+    --glass-blur: 4px;
   }
 }
 

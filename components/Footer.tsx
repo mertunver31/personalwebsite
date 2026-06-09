@@ -33,7 +33,7 @@ export function Footer() {
         </p>
         <p className="font-mono text-xs">{t("builtWith")}</p>
       </div>
-      <p className="mx-auto mt-4 max-w-6xl text-center font-mono text-[10px] leading-relaxed text-muted/60">
+      <p className="mx-auto mt-4 max-w-6xl text-center font-mono text-[10px] leading-relaxed text-muted">
         Music: “Maple Leaf Rag” by Scott Joplin (public domain) ·{" "}
         <a
           href="https://archive.org/details/kosmorider-night"

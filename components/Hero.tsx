@@ -9,6 +9,7 @@ import { profile, socials } from "@/content/profile";
 import { pick, type Locale } from "@/lib/i18n";
 import { SocialIcon } from "./Icons";
 import { useLights } from "./lightStore";
+import { useIsMobile } from "./useIsMobile";
 import { playGunshot } from "./gunSound";
 
 // Western geçişinde fotoğrafa açılan kurşun deliklerinin konumları
@@ -93,6 +94,7 @@ function RaveSmiley() {
 // Neon'a geçiş: siyah zeminde EDM rave sahnesi (strobe + gülen surat + ekolayzer
 // + ses dalgaları + uçuşan şimşekler) yanıp söner, sonra resim belirir
 function NeonReveal() {
+  const isMobile = useIsMobile();
   const bars = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   const bolts = [
     { x: "78%", y: "26%", d: 0, c: "#22d3ee" },
@@ -143,8 +145,10 @@ function NeonReveal() {
           }}
           transition={{ duration: 1.7, times: [0, 0.12, 0.2, 0.32, 0.45, 0.6, 0.75, 1] }}
           style={{
-            filter:
-              "drop-shadow(0 0 10px #eaff00) drop-shadow(0 0 20px #22d3ee) drop-shadow(0 0 32px #ec4899)",
+            // Mobilde tek drop-shadow — üçlü zincir açılışta jank yaratıyordu
+            filter: isMobile
+              ? "drop-shadow(0 0 16px #22d3ee)"
+              : "drop-shadow(0 0 10px #eaff00) drop-shadow(0 0 20px #22d3ee) drop-shadow(0 0 32px #ec4899)",
           }}
         >
           <RaveSmiley />

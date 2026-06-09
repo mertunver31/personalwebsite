@@ -31,11 +31,15 @@ const western = Rye({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-western",
+  display: "swap",
+  preload: false,
 });
 const typewriter = Special_Elite({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-typewriter",
+  display: "swap",
+  preload: false,
 });
 
 export function generateStaticParams() {

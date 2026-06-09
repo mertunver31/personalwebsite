@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { VisitTracker } from "./VisitTracker";
+import { useIsMobile } from "./useIsMobile";
 
 // Kritik olmayan (ekranın görünür içeriği olmayan) widget'lar ilk hidrasyondan
 // çıkarılır; ayrı chunk olarak yüklenir. Mobil TBT'yi düşürür, skoru stabilize eder.
@@ -28,14 +30,27 @@ const Tumbleweed = dynamic(
 );
 
 export function ClientWidgets() {
+  const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <LightPull />
       <MusicBox />
-      <ContactOrb />
-      <CustomScrollbar />
+      {!isMobile && (
+        <>
+          <ContactOrb />
+          <CustomScrollbar />
+          <Tumbleweed />
+        </>
+      )}
       <NeonGrid />
-      <Tumbleweed />
       <VisitTracker />
     </>
   );

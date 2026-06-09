@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { useLights } from "./lightStore";
+import { useIsMobile } from "./useIsMobile";
 
 const CELL = 64; // ızgara hücre boyutu (globals.css ile uyumlu)
 
@@ -61,6 +62,7 @@ function makeBeams(): Beam[] {
  */
 export function NeonGrid() {
   const { on } = useLights();
+  const isMobile = useIsMobile();
   const beams = useMemo(() => makeBeams(), []);
 
   if (on) return null;
@@ -77,8 +79,10 @@ export function NeonGrid() {
         }}
       />
 
-      {/* Akan ışık parçaları */}
-      {beams.map((b) =>
+      {/* Akan ışık parçaları — mobilde kapalı (sürekli hue-rotate + box-shadow
+          repaint'i mobil GPU'yu kasıyordu); statik ızgara mobilde de kalır */}
+      {!isMobile &&
+        beams.map((b) =>
         b.axis === "x" ? (
           <span
             key={b.id}

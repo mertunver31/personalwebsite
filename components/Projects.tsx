@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Lock, ExternalLink } from "lucide-react";
+import Image from "next/image";
 import { projects } from "@/content/projects";
 import { pick, type Locale } from "@/lib/i18n";
 import { SectionHeading } from "./SectionHeading";
@@ -25,10 +26,11 @@ export function Projects({ locale }: { locale: Locale }) {
             <Reveal key={p.title} delay={i % 2}>
               <article className="glass gradient-border group flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1">
                 {p.image && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={p.image}
                     alt={p.title}
+                    width={600}
+                    height={338}
                     className="mb-5 aspect-video w-full rounded-xl object-cover"
                   />
                 )}
