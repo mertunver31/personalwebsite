@@ -5,7 +5,7 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // api, _next, _vercel, metadata rotaları ve dosya uzantılı istekler hariç tümü
+  // api, _next, _vercel, metadata rotaları, etsyfontype ve dosya uzantılı istekler hariç tümü
   matcher:
-    "/((?!api|trpc|_next|_vercel|opengraph-image|twitter-image|icon|sitemap|robots|manifest|.*\\..*).*)",
+    "/((?!api|trpc|etsyfontype|_next|_vercel|opengraph-image|twitter-image|icon|sitemap|robots|manifest|.*\\..*).*)",
 };

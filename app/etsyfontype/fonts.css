@@ -1,0 +1,330 @@
+/* Import Google Font for Font 17: Dancing Script */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* ==========================================
+   Font-face Declarations for Local Fonts
+   Supporting multiple file formats (.woff2, .woff, .ttf, .otf)
+   and case/special character aliases
+   ========================================== */
+
+/* Font 1: Magnolia Script */
+@font-face {
+  font-family: 'Magnolia Script';
+  src: url('/fonts/magnolia-script.woff2') format('woff2'),
+       url('/fonts/magnolia-script.woff') format('woff'),
+       url('/fonts/magnolia-script.ttf') format('truetype'),
+       url('/fonts/magnolia-script.otf') format('opentype'),
+       url('/fonts/Magnolia Script.ttf') format('truetype'),
+       url('/fonts/Magnolia Script.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 2: Intro Script */
+@font-face {
+  font-family: 'Intro Script';
+  src: url('/fonts/intro-script.woff2') format('woff2'),
+       url('/fonts/intro-script.woff') format('woff'),
+       url('/fonts/intro-script.ttf') format('truetype'),
+       url('/fonts/intro-script.otf') format('opentype'),
+       url('/fonts/Intro Script.ttf') format('truetype'),
+       url('/fonts/Intro Script.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 3: Script MT Bold */
+@font-face {
+  font-family: 'Script MT Bold';
+  src: url('/fonts/script-mt-bold.woff2') format('woff2'),
+       url('/fonts/script-mt-bold.woff') format('woff'),
+       url('/fonts/script-mt-bold.ttf') format('truetype'),
+       url('/fonts/script-mt-bold.otf') format('opentype'),
+       url('/fonts/Script MT Bold.ttf') format('truetype'),
+       url('/fonts/Script MT Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 4: GeoSlab703 Md BT */
+@font-face {
+  font-family: 'GeoSlab703 Md BT';
+  src: url('/fonts/geoslab703-md-bt.woff2') format('woff2'),
+       url('/fonts/geoslab703-md-bt.woff') format('woff'),
+       url('/fonts/geoslab703-md-bt.ttf') format('truetype'),
+       url('/fonts/geoslab703-md-bt.otf') format('opentype'),
+       url('/fonts/GeoSlab703 Md BT.ttf') format('truetype'),
+       url('/fonts/GeoSlab703 Md BT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 5: Birds of Paradise */
+@font-face {
+  font-family: 'Birds of Paradise';
+  src: url('/fonts/birds-of-paradise.woff2') format('woff2'),
+       url('/fonts/birds-of-paradise.woff') format('woff'),
+       url('/fonts/birds-of-paradise.ttf') format('truetype'),
+       url('/fonts/birds-of-paradise.otf') format('opentype'),
+       url('/fonts/Birds of Paradise.ttf') format('truetype'),
+       url('/fonts/Birds of Paradise.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 6: smoothy cursive (aliases for smoothy cursive & Smoothy Cursive) */
+@font-face {
+  font-family: 'smoothy cursive';
+  src: url('/fonts/smoothy-cursive.woff2') format('woff2'),
+       url('/fonts/smoothy-cursive.woff') format('woff'),
+       url('/fonts/smoothy-cursive.ttf') format('truetype'),
+       url('/fonts/smoothy-cursive.otf') format('opentype'),
+       url('/fonts/smoothy cursive.ttf') format('truetype'),
+       url('/fonts/smoothy cursive.otf') format('opentype'),
+       url('/fonts/Smoothy Cursive.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Smoothy Cursive';
+  src: url('/fonts/smoothy-cursive.woff2') format('woff2'),
+       url('/fonts/smoothy-cursive.woff') format('woff'),
+       url('/fonts/smoothy-cursive.ttf') format('truetype'),
+       url('/fonts/smoothy-cursive.otf') format('opentype'),
+       url('/fonts/smoothy cursive.ttf') format('truetype'),
+       url('/fonts/Smoothy Cursive.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 7: Lucida calligraphy (aliases for Lucida calligraphy, Lucida Calligraphy, Lucida Calligraphy Custom) */
+@font-face {
+  font-family: 'Lucida calligraphy';
+  src: url('/fonts/lucida-calligraphy.woff2') format('woff2'),
+       url('/fonts/lucida-calligraphy.woff') format('woff'),
+       url('/fonts/lucida-calligraphy.ttf') format('truetype'),
+       url('/fonts/lucida-calligraphy.otf') format('opentype'),
+       url('/fonts/lucida calligraphy.ttf') format('truetype'),
+       url('/fonts/Lucida Calligraphy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lucida Calligraphy';
+  src: url('/fonts/lucida-calligraphy.woff2') format('woff2'),
+       url('/fonts/lucida-calligraphy.woff') format('woff'),
+       url('/fonts/lucida-calligraphy.ttf') format('truetype'),
+       url('/fonts/lucida-calligraphy.otf') format('opentype'),
+       url('/fonts/lucida calligraphy.ttf') format('truetype'),
+       url('/fonts/Lucida Calligraphy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 8: Monotype Corsiva */
+@font-face {
+  font-family: 'Monotype Corsiva';
+  src: url('/fonts/monotype-corsiva.woff2') format('woff2'),
+       url('/fonts/monotype-corsiva.woff') format('woff'),
+       url('/fonts/monotype-corsiva.ttf') format('truetype'),
+       url('/fonts/monotype-corsiva.otf') format('opentype'),
+       url('/fonts/monotype corsiva.ttf') format('truetype'),
+       url('/fonts/Monotype Corsiva.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 10: Lakesight */
+@font-face {
+  font-family: 'Lakesight';
+  src: url('/fonts/lakesight.woff2') format('woff2'),
+       url('/fonts/lakesight.woff') format('woff'),
+       url('/fonts/lakesight.ttf') format('truetype'),
+       url('/fonts/lakesight.otf') format('opentype'),
+       url('/fonts/Lakesight.ttf') format('truetype'),
+       url('/fonts/Lakesight.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 11: La portenia de la recoleta */
+@font-face {
+  font-family: 'La portenia de la recoleta';
+  src: url('/fonts/la-portenia-de-la-recoleta.woff2') format('woff2'),
+       url('/fonts/la-portenia-de-la-recoleta.woff') format('woff'),
+       url('/fonts/la-portenia-de-la-recoleta.ttf') format('truetype'),
+       url('/fonts/la-portenia-de-la-recoleta.otf') format('opentype'),
+       url('/fonts/la-portenia.ttf') format('truetype'),
+       url('/fonts/la-portenia.otf') format('opentype'),
+       url('/fonts/La Portenia de la Recoleta.ttf') format('truetype'),
+       url('/fonts/La Portenia de la Recoleta.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'La Portenia de la Recoleta';
+  src: url('/fonts/la-portenia-de-la-recoleta.woff2') format('woff2'),
+       url('/fonts/la-portenia-de-la-recoleta.woff') format('woff'),
+       url('/fonts/la-portenia-de-la-recoleta.ttf') format('truetype'),
+       url('/fonts/la-portenia-de-la-recoleta.otf') format('opentype'),
+       url('/fonts/La Portenia de la Recoleta.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 12: Amorinda */
+@font-face {
+  font-family: 'Amorinda';
+  src: url('/fonts/amorinda.woff2') format('woff2'),
+       url('/fonts/amorinda.woff') format('woff'),
+       url('/fonts/amorinda.ttf') format('truetype'),
+       url('/fonts/amorinda.otf') format('opentype'),
+       url('/fonts/Amorinda.ttf') format('truetype'),
+       url('/fonts/Amorinda.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 13: Austein Script */
+@font-face {
+  font-family: 'Austein Script';
+  src: url('/fonts/austein-script.woff2') format('woff2'),
+       url('/fonts/austein-script.woff') format('woff'),
+       url('/fonts/austein-script.ttf') format('truetype'),
+       url('/fonts/austein-script.otf') format('opentype'),
+       url('/fonts/austein.ttf') format('truetype'),
+       url('/fonts/austein.otf') format('opentype'),
+       url('/fonts/Austein Script.ttf') format('truetype'),
+       url('/fonts/Austein Script.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 14: canterbury gothic */
+@font-face {
+  font-family: 'canterbury gothic';
+  src: url('/fonts/canterbury-gothic.woff2') format('woff2'),
+       url('/fonts/canterbury-gothic.woff') format('woff'),
+       url('/fonts/canterbury-gothic.ttf') format('truetype'),
+       url('/fonts/canterbury-gothic.otf') format('opentype'),
+       url('/fonts/canterbury.ttf') format('truetype'),
+       url('/fonts/canterbury.otf') format('opentype'),
+       url('/fonts/canterbury gothic.ttf') format('truetype'),
+       url('/fonts/Canterbury Gothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Canterbury Gothic';
+  src: url('/fonts/canterbury-gothic.woff2') format('woff2'),
+       url('/fonts/canterbury-gothic.woff') format('woff'),
+       url('/fonts/canterbury-gothic.ttf') format('truetype'),
+       url('/fonts/canterbury-gothic.otf') format('opentype'),
+       url('/fonts/Canterbury Gothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 15: Hobo BT */
+@font-face {
+  font-family: 'Hobo BT';
+  src: url('/fonts/hobo-bt.woff2') format('woff2'),
+       url('/fonts/hobo-bt.woff') format('woff'),
+       url('/fonts/hobo-bt.ttf') format('truetype'),
+       url('/fonts/hobo-bt.otf') format('opentype'),
+       url('/fonts/hobo.ttf') format('truetype'),
+       url('/fonts/hobo.otf') format('opentype'),
+       url('/fonts/Hobo BT.ttf') format('truetype'),
+       url('/fonts/Hobo BT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 16: Atatürk (supporting 'Atatürk' with ü, 'Ataturk' without, and file fallbacks) */
+@font-face {
+  font-family: 'Atatürk';
+  src: url('/fonts/ataturk.woff2') format('woff2'),
+       url('/fonts/ataturk.woff') format('woff'),
+       url('/fonts/ataturk.ttf') format('truetype'),
+       url('/fonts/ataturk.otf') format('opentype'),
+       url('/fonts/atatürk.ttf') format('truetype'),
+       url('/fonts/atatürk.otf') format('opentype'),
+       url('/fonts/Ataturk.ttf') format('truetype'),
+       url('/fonts/Atatürk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ataturk';
+  src: url('/fonts/ataturk.woff2') format('woff2'),
+       url('/fonts/ataturk.woff') format('woff'),
+       url('/fonts/ataturk.ttf') format('truetype'),
+       url('/fonts/ataturk.otf') format('opentype'),
+       url('/fonts/atatürk.ttf') format('truetype'),
+       url('/fonts/Ataturk.ttf') format('truetype'),
+       url('/fonts/Atatürk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 18: Autumn Chant */
+@font-face {
+  font-family: 'Autumn Chant';
+  src: url('/fonts/autumn-chant.woff2') format('woff2'),
+       url('/fonts/autumn-chant.woff') format('woff'),
+       url('/fonts/autumn-chant.ttf') format('truetype'),
+       url('/fonts/autumn-chant.otf') format('opentype'),
+       url('/fonts/Autumn Chant.ttf') format('truetype'),
+       url('/fonts/Autumn Chant.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 19: Angelface */
+@font-face {
+  font-family: 'Angelface';
+  src: url('/fonts/angelface.woff2') format('woff2'),
+       url('/fonts/angelface.woff') format('woff'),
+       url('/fonts/angelface.ttf') format('truetype'),
+       url('/fonts/angelface.otf') format('opentype'),
+       url('/fonts/Angelface.ttf') format('truetype'),
+       url('/fonts/Angelface.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font 20: Sauber Script */
+@font-face {
+  font-family: 'Sauber Script';
+  src: url('/fonts/sauber-script.woff2') format('woff2'),
+       url('/fonts/sauber-script.woff') format('woff'),
+       url('/fonts/sauber-script.ttf') format('truetype'),
+       url('/fonts/sauber-script.otf') format('opentype'),
+       url('/fonts/Sauber Script.ttf') format('truetype'),
+       url('/fonts/Sauber Script.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
