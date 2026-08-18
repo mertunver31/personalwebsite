@@ -19,13 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
-      // Pofu (Android) gizlilik politikası — Play Console'a verilen adres.
-      url: `${siteUrl}/pofu/gizlilik`,
+      // Vesper (Android) gizlilik politikası — Play Console'a verilen adres.
+      url: `${siteUrl}/vesper/gizlilik`,
       lastModified: now,
       alternates: {
         languages: {
-          tr: `${siteUrl}/pofu/gizlilik`,
-          en: `${siteUrl}/pofu/privacy`,
+          tr: `${siteUrl}/vesper/gizlilik`,
+          en: `${siteUrl}/vesper/privacy`,
         },
       },
     },

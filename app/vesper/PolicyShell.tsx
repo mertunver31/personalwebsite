@@ -4,7 +4,7 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 /**
- * Pofu yasal sayfalarının ortak kabuğu.
+ * Vesper yasal sayfalarının ortak kabuğu.
  *
  * `[locale]` yönlendirmesinin dışında duruyor: Play Console'a verilen gizlilik
  * politikası adresi dil öneki almadan sabit kalsın diye (bkz. proxy.ts

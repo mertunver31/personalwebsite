@@ -1,21 +1,26 @@
 /**
- * Pofu (Android) gizlilik politikası metni — TR ve EN.
+ * Vesper (Android) gizlilik politikası metni — TR ve EN.
  *
  * Google Play her uygulama için herkese açık bir gizlilik politikası URL'i
  * zorunlu tutuyor; Play Console'a verilen adres burasıdır:
- *   https://mertefeunver.com/pofu/gizlilik
+ *   https://mertefeunver.com/vesper/gizlilik
+ *
+ * Uygulamanın adı **Vesper**. Play'de ad çakışması çıkarsa mağaza kaydı
+ * "Vesper Pomodoro App" olarak görünecek; cihazda ikonun altında her hâlükârda
+ * yalnız "Vesper" yazıyor. Metin ikisini de kapsayacak şekilde yazıldı.
  *
  * Metin uygulamanın gerçek davranışını anlatır — değiştirmeden önce
  * `Q:\pomodoroapp` tarafındaki davranışın hâlâ aynı olduğunu doğrula:
  *  - veriler yalnız cihazdaki SQLite'ta (`src/db`)
  *  - tek dış ağ isteği ortam videosu indirmesi (`src/features/scene/videoCache.ts`)
  *  - analitik / çökme raporu / reklam SDK'sı yok, hesap yok
+ *  - arayüz dili Türkçe ve İngilizce; seçim cihazda saklanır
  */
 
-export const POFU_CONTACT_EMAIL = "mertefeunver09@gmail.com";
+export const VESPER_CONTACT_EMAIL = "mertefeunver09@gmail.com";
 
 /** Politikanın yürürlük tarihi — metin değişince güncelle. */
-export const POFU_POLICY_DATE = { tr: "19 Ağustos 2026", en: "19 August 2026" };
+export const VESPER_POLICY_DATE = { tr: "19 Ağustos 2026", en: "19 August 2026" };
 
 export interface PolicySection {
   heading: string;
@@ -39,24 +44,25 @@ export interface PolicyDoc {
 
 export const POLICY_TR: PolicyDoc = {
   locale: "tr",
-  title: "Pofu — Gizlilik Politikası",
-  appName: "Pofu",
-  updated: `Son güncelleme: ${POFU_POLICY_DATE.tr}`,
+  title: "Vesper — Gizlilik Politikası",
+  appName: "Vesper",
+  updated: `Son güncelleme: ${VESPER_POLICY_DATE.tr}`,
   intro: [
-    "Pofu, odaklanmak için kullanılan bir pomodoro zamanlayıcısıdır. Bu politika, uygulamanın hangi verileri işlediğini açıklar.",
-    "Kısa cevap: Pofu sizden hiçbir kişisel veri toplamaz, hesap açmanızı istemez ve verilerinizi hiçbir sunucuya göndermez. Uygulamada ürettiğiniz her şey yalnızca kendi cihazınızda kalır.",
+    "Vesper, odaklanmak için kullanılan bir pomodoro zamanlayıcısıdır. Bu politika, uygulamanın hangi verileri işlediğini açıklar.",
+    "Kısa cevap: Vesper sizden hiçbir kişisel veri toplamaz, hesap açmanızı istemez ve verilerinizi hiçbir sunucuya göndermez. Uygulamada ürettiğiniz her şey yalnızca kendi cihazınızda kalır.",
   ],
   sections: [
     {
-      heading: "1. Sorumlu",
+      heading: "1. Uygulama ve sorumlu",
       paragraphs: [
-        `Uygulamayı geliştiren ve yayınlayan: Mert Efe Ünver (bireysel geliştirici). İletişim: ${POFU_CONTACT_EMAIL}`,
+        "Bu politika, Android için yayımlanan Vesper uygulamasını kapsar. Uygulama Google Play'de ad çakışması olması hâlinde \"Vesper Pomodoro App\" adıyla listelenebilir; her iki durumda da aynı uygulamadan söz edilmektedir.",
+        `Uygulamayı geliştiren ve yayınlayan: Mert Efe Ünver (bireysel geliştirici). İletişim: ${VESPER_CONTACT_EMAIL}`,
       ],
     },
     {
       heading: "2. Toplanan kişisel veriler",
       paragraphs: [
-        "Hiçbiri. Pofu'nun kullanıcı hesabı, giriş ekranı veya sunucu tarafı yoktur. Ad, e-posta, telefon numarası, konum, kişi listesi, cihaz kimliği veya reklam kimliği toplanmaz.",
+        "Hiçbiri. Vesper'ın kullanıcı hesabı, giriş ekranı veya sunucu tarafı yoktur. Ad, e-posta, telefon numarası, konum, kişi listesi, cihaz kimliği veya reklam kimliği toplanmaz.",
         "Uygulamada analitik, çökme raporlama veya reklam SDK'sı bulunmaz. Kullanım davranışınız izlenmez ve profillenmez.",
       ],
     },
@@ -69,12 +75,19 @@ export const POLICY_TR: PolicyDoc = {
         "Odak oturumu kayıtlarınız (başlangıç/bitiş zamanı, süre, tamamlandı mı)",
         "Görev listeniz ve görev başlıkları",
         "Ayarlarınız (süreler, tema, sahne seçimi, ses tercihi)",
+        "Arayüz dili tercihiniz (Türkçe / İngilizce)",
         "Arka plan olarak seçtiyseniz kendi görselinizin cihazdaki dosya yolu",
         "İndirdiğiniz ortam videolarının önbelleği",
       ],
     },
     {
-      heading: "4. İstenen izinler ve nedenleri",
+      heading: "4. Uygulama dili",
+      paragraphs: [
+        "Vesper arayüzü Türkçe ve İngilizce sunulur. Hangi dili kullandığınız yalnızca cihazınızda saklanan bir tercihtir; hiçbir yere gönderilmez ve sizi tanımlamak için kullanılmaz. Bu politikanın İngilizce sürümü de aynı içeriği taşır ve sayfanın başındaki bağlantıdan açılabilir.",
+      ],
+    },
+    {
+      heading: "5. İstenen izinler ve nedenleri",
       bullets: [
         "Bildirimler: Odak veya mola süresi dolduğunda sizi uyarmak için. Bildirimler tamamen cihaz üzerinde oluşturulur; uzaktan gönderilen push bildirimi yoktur ve bunun için hiçbir kimlik veya token oluşturulmaz.",
         "Fotoğraflara erişim: Yalnızca kendi arka plan görselinizi seçmek istediğinizde ve yalnızca o an sorulur. Seçtiğiniz görsel cihazınızda kalır, hiçbir yere yüklenmez. Galerinizin geri kalanı okunmaz.",
@@ -82,75 +95,74 @@ export const POLICY_TR: PolicyDoc = {
       ],
     },
     {
-      heading: "5. Üçüncü taraf hizmetler",
+      heading: "6. Üçüncü taraf hizmetler",
       paragraphs: [
-        "Pofu tek bir dış hizmete bağlanır: ortam videolarının barındırıldığı içerik dağıtım ağı (mixkit.co / assets.mixkit.co). Bir sahne indirdiğinizde, her normal internet isteğinde olduğu gibi IP adresiniz ve cihazınızın tarayıcı kimliği bu sunucuya iletilir. Bu istekle birlikte uygulamadan hiçbir kişisel bilgi gönderilmez ve bu bağlantı yalnız indirme sırasında kurulur.",
+        "Vesper tek bir dış hizmete bağlanır: ortam videolarının barındırıldığı içerik dağıtım ağı (mixkit.co / assets.mixkit.co). Bir sahne indirdiğinizde, her normal internet isteğinde olduğu gibi IP adresiniz ve cihazınızın tarayıcı kimliği bu sunucuya iletilir. Bu istekle birlikte uygulamadan hiçbir kişisel bilgi gönderilmez ve bu bağlantı yalnız indirme sırasında kurulur.",
         "Uygulamayı Google Play üzerinden edindiyseniz, Google'ın kendi veri işleme uygulamaları da geçerlidir; bu, geliştiricinin kontrolü dışındadır.",
       ],
     },
     {
-      heading: "6. Verilerin paylaşılması ve satışı",
+      heading: "7. Verilerin paylaşılması ve satışı",
       paragraphs: [
         "Uygulama hiçbir veriyi üçüncü taraflarla paylaşmaz, kiralamaz veya satmaz. Paylaşılabilecek bir veri zaten toplanmamaktadır.",
       ],
     },
     {
-      heading: "7. Verilerinizi silme",
+      heading: "8. Verilerinizi silme",
       paragraphs: [
-        "Tüm veriler cihazınızda olduğu için silme işlemi tamamen sizin kontrolünüzdedir. Android ayarlarından Uygulamalar → Pofu → Depolama → Verileri temizle adımlarıyla kayıtlarınızı, görevlerinizi ve ayarlarınızı kalıcı olarak silebilirsiniz. Uygulamayı kaldırmak da aynı sonucu verir.",
+        "Tüm veriler cihazınızda olduğu için silme işlemi tamamen sizin kontrolünüzdedir. Android ayarlarından Uygulamalar → Vesper → Depolama → Verileri temizle adımlarıyla kayıtlarınızı, görevlerinizi ve ayarlarınızı kalıcı olarak silebilirsiniz. Uygulamayı kaldırmak da aynı sonucu verir.",
         "Geliştiricinin elinde silinebilecek bir kopyanız bulunmaz.",
       ],
     },
     {
-      heading: "8. Çocukların gizliliği",
+      heading: "9. Çocukların gizliliği",
       paragraphs: [
-        "Pofu çocuklara yönelik tasarlanmamıştır ve hiç kimseden, hiçbir yaş grubundan kişisel veri toplamaz.",
+        "Vesper çocuklara yönelik tasarlanmamıştır ve hiç kimseden, hiçbir yaş grubundan kişisel veri toplamaz.",
       ],
     },
     {
-      heading: "9. Haklarınız",
+      heading: "10. Haklarınız",
       paragraphs: [
         "KVKK ve GDPR kapsamındaki erişim, düzeltme ve silme haklarınız saklıdır. Uygulama kişisel veri işlemediği için bu haklar pratikte cihazınızdaki verilere doğrudan erişiminizle karşılanır. Yine de her türlü soru için aşağıdaki adresten yazabilirsiniz.",
       ],
     },
     {
-      heading: "10. Bu politikadaki değişiklikler",
+      heading: "11. Bu politikadaki değişiklikler",
       paragraphs: [
         "Uygulamaya veri işleyen yeni bir özellik eklenirse bu sayfa güncellenir ve yukarıdaki tarih değiştirilir. Önemli değişiklikler uygulama içinde de duyurulur.",
       ],
     },
     {
-      heading: "11. İletişim",
-      paragraphs: [
-        `Gizlilikle ilgili her soru için: ${POFU_CONTACT_EMAIL}`,
-      ],
+      heading: "12. İletişim",
+      paragraphs: [`Gizlilikle ilgili her soru için: ${VESPER_CONTACT_EMAIL}`],
     },
   ],
   altLabel: "English version",
-  altHref: "/pofu/privacy",
+  altHref: "/vesper/privacy",
   backLabel: "mertefeunver.com",
 };
 
 export const POLICY_EN: PolicyDoc = {
   locale: "en",
-  title: "Pofu — Privacy Policy",
-  appName: "Pofu",
-  updated: `Last updated: ${POFU_POLICY_DATE.en}`,
+  title: "Vesper — Privacy Policy",
+  appName: "Vesper",
+  updated: `Last updated: ${VESPER_POLICY_DATE.en}`,
   intro: [
-    "Pofu is a pomodoro focus timer. This policy explains what data the app processes.",
-    "The short answer: Pofu collects no personal data, requires no account, and sends nothing to any server. Everything you create in the app stays on your own device.",
+    "Vesper is a pomodoro focus timer. This policy explains what data the app processes.",
+    "The short answer: Vesper collects no personal data, requires no account, and sends nothing to any server. Everything you create in the app stays on your own device.",
   ],
   sections: [
     {
-      heading: "1. Who is responsible",
+      heading: "1. The app and who is responsible",
       paragraphs: [
-        `The app is developed and published by Mert Efe Ünver (individual developer). Contact: ${POFU_CONTACT_EMAIL}`,
+        'This policy covers the Vesper app published for Android. If the name is already taken on Google Play, the store listing may appear as "Vesper Pomodoro App"; either way it refers to the same app.',
+        `The app is developed and published by Mert Efe Ünver (individual developer). Contact: ${VESPER_CONTACT_EMAIL}`,
       ],
     },
     {
       heading: "2. Personal data collected",
       paragraphs: [
-        "None. Pofu has no user accounts, no sign-in and no backend. It does not collect your name, email, phone number, location, contacts, device identifiers or advertising ID.",
+        "None. Vesper has no user accounts, no sign-in and no backend. It does not collect your name, email, phone number, location, contacts, device identifiers or advertising ID.",
         "The app contains no analytics, crash reporting or advertising SDKs. Your usage is not tracked or profiled.",
       ],
     },
@@ -163,12 +175,19 @@ export const POLICY_EN: PolicyDoc = {
         "Your focus session history (start/end time, duration, whether it completed)",
         "Your task list and task titles",
         "Your settings (durations, theme, scene selection, sound preference)",
+        "Your interface language preference (Turkish / English)",
         "The on-device file path of your own image, if you chose one as a background",
         "The cache of ambient videos you have downloaded",
       ],
     },
     {
-      heading: "4. Permissions and why they are requested",
+      heading: "4. App language",
+      paragraphs: [
+        "The Vesper interface is offered in Turkish and English. Which language you use is a preference stored only on your device; it is never transmitted anywhere and is not used to identify you. The Turkish version of this policy carries the same content and can be opened from the link at the top of the page.",
+      ],
+    },
+    {
+      heading: "5. Permissions and why they are requested",
       bullets: [
         "Notifications: to alert you when a focus or break period ends. Notifications are generated entirely on the device; there is no remote push and no token or identifier is created for it.",
         "Photo access: only when you choose to set your own background image, and only asked at that moment. The image you pick stays on your device and is never uploaded. The rest of your gallery is not read.",
@@ -176,49 +195,49 @@ export const POLICY_EN: PolicyDoc = {
       ],
     },
     {
-      heading: "5. Third-party services",
+      heading: "6. Third-party services",
       paragraphs: [
-        "Pofu connects to a single external service: the content delivery network hosting the ambient videos (mixkit.co / assets.mixkit.co). When you download a scene, your IP address and device user agent reach that server, as with any ordinary internet request. No personal information from the app is sent with it, and the connection is made only during the download.",
+        "Vesper connects to a single external service: the content delivery network hosting the ambient videos (mixkit.co / assets.mixkit.co). When you download a scene, your IP address and device user agent reach that server, as with any ordinary internet request. No personal information from the app is sent with it, and the connection is made only during the download.",
         "If you obtained the app through Google Play, Google's own data practices also apply and are outside the developer's control.",
       ],
     },
     {
-      heading: "6. Sharing and selling of data",
+      heading: "7. Sharing and selling of data",
       paragraphs: [
         "The app does not share, rent or sell any data to third parties. No such data is collected in the first place.",
       ],
     },
     {
-      heading: "7. Deleting your data",
+      heading: "8. Deleting your data",
       paragraphs: [
-        "Because all data lives on your device, deletion is entirely under your control. In Android settings, go to Apps → Pofu → Storage → Clear data to permanently erase your history, tasks and settings. Uninstalling the app has the same effect.",
+        "Because all data lives on your device, deletion is entirely under your control. In Android settings, go to Apps → Vesper → Storage → Clear data to permanently erase your history, tasks and settings. Uninstalling the app has the same effect.",
         "The developer holds no copy that could be deleted on your behalf.",
       ],
     },
     {
-      heading: "8. Children's privacy",
+      heading: "9. Children's privacy",
       paragraphs: [
-        "Pofu is not designed for children and collects no personal data from anyone, of any age.",
+        "Vesper is not designed for children and collects no personal data from anyone, of any age.",
       ],
     },
     {
-      heading: "9. Your rights",
+      heading: "10. Your rights",
       paragraphs: [
         "Your rights of access, rectification and erasure under GDPR and Turkish KVKK are reserved. Since the app processes no personal data, these rights are satisfied in practice by your direct access to the data on your device. You are welcome to write with any question.",
       ],
     },
     {
-      heading: "10. Changes to this policy",
+      heading: "11. Changes to this policy",
       paragraphs: [
         "If a feature that processes data is ever added, this page is updated and the date above is changed. Significant changes are also announced inside the app.",
       ],
     },
     {
-      heading: "11. Contact",
-      paragraphs: [`For any privacy question: ${POFU_CONTACT_EMAIL}`],
+      heading: "12. Contact",
+      paragraphs: [`For any privacy question: ${VESPER_CONTACT_EMAIL}`],
     },
   ],
   altLabel: "Türkçe sürüm",
-  altHref: "/pofu/gizlilik",
+  altHref: "/vesper/gizlilik",
   backLabel: "mertefeunver.com",
 };
