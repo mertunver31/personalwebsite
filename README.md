@@ -35,6 +35,8 @@ Tüm kişisel içerik tek yerde, kolayca düzenlenebilir:
 
 ## Deploy (Vercel)
 
+
+
 1. Bu projeyi GitHub'a push et.
 2. [vercel.com](https://vercel.com) → New Project → repoyu import et → Deploy.
 3. Vercel Analytics paneli ziyaretçi istatistiklerini gösterir (`@vercel/analytics` zaten ekli).

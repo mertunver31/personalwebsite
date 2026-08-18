@@ -10,7 +10,7 @@ export function About({ locale }: { locale: Locale }) {
   const t = useTranslations("about");
 
   return (
-    <section id="about" className="scroll-mt-24 px-5 py-24 sm:px-8">
+    <section id="about" className="scroll-mt-24 px-5 py-16 sm:py-24 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <SectionHeading kicker={t("kicker")} title={t("title")} />
         <div className="grid gap-10 md:grid-cols-5">

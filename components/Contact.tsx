@@ -13,7 +13,7 @@ export function Contact({ locale }: { locale: Locale }) {
   void locale;
 
   return (
-    <section id="contact" className="scroll-mt-24 px-5 py-24 sm:px-8">
+    <section id="contact" className="scroll-mt-24 px-5 py-16 sm:py-24 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <SectionHeading kicker={t("kicker")} title={t("title")} />
 

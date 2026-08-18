@@ -10,7 +10,7 @@ export function Experience({ locale }: { locale: Locale }) {
   const t = useTranslations("experience");
 
   return (
-    <section id="experience" className="scroll-mt-24 px-5 py-24 sm:px-8">
+    <section id="experience" className="scroll-mt-24 px-5 py-16 sm:py-24 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <SectionHeading kicker={t("kicker")} title={t("title")} />
 
