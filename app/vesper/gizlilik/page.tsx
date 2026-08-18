@@ -5,16 +5,16 @@ import { POLICY_TR } from "../policy-content";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Pofu — Gizlilik Politikası",
+  title: "Vesper — Gizlilik Politikası",
   description:
-    "Pofu pomodoro uygulamasının gizlilik politikası. Uygulama hiçbir kişisel veri toplamaz; tüm veriler yalnızca cihazında kalır.",
+    "Vesper pomodoro uygulamasının gizlilik politikası. Uygulama hiçbir kişisel veri toplamaz; tüm veriler yalnızca cihazında kalır.",
   alternates: {
-    canonical: "/pofu/gizlilik",
-    languages: { tr: "/pofu/gizlilik", en: "/pofu/privacy" },
+    canonical: "/vesper/gizlilik",
+    languages: { tr: "/vesper/gizlilik", en: "/vesper/privacy" },
   },
   robots: { index: true, follow: true },
 };
 
-export default function PofuGizlilikPage() {
+export default function VesperGizlilikPage() {
   return <PolicyView doc={POLICY_TR} />;
 }

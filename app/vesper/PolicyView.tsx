@@ -70,7 +70,7 @@ export function PolicyView({ doc }: { doc: PolicyDoc }) {
       </div>
 
       <footer className="mt-16 border-t border-[var(--border)] pt-8 text-sm text-[var(--muted)]">
-        Pofu · {doc.updated}
+        {doc.appName} · {doc.updated}
       </footer>
     </main>
   );
