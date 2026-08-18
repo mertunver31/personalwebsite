@@ -18,5 +18,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: { tr: `${siteUrl}/tr`, en: `${siteUrl}/en` },
       },
     },
+    {
+      // Pofu (Android) gizlilik politikası — Play Console'a verilen adres.
+      url: `${siteUrl}/pofu/gizlilik`,
+      lastModified: now,
+      alternates: {
+        languages: {
+          tr: `${siteUrl}/pofu/gizlilik`,
+          en: `${siteUrl}/pofu/privacy`,
+        },
+      },
+    },
   ];
 }
